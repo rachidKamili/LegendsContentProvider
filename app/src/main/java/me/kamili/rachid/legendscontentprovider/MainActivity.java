@@ -2,6 +2,9 @@ package me.kamili.rachid.legendscontentprovider;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        changeButtonBackgroundState();
+    }
+
+    private void changeButtonBackgroundState() {
+        StateListDrawable states = new StateListDrawable();
+        states.addState(new int[] {android.R.attr.state_pressed},new ColorDrawable(Color.RED));
+        states.addState(new int[] {android.R.attr.state_focused},new ColorDrawable(Color.GREEN));
+        states.addState(new int[] { },new ColorDrawable(Color.YELLOW));
+        findViewById(R.id.button2).setBackground(states);
     }
 
     public void saveDataToDb(View view) {
