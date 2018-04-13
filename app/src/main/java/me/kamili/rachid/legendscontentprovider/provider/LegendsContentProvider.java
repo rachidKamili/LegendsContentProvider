@@ -1,4 +1,4 @@
-package me.kamili.rachid.legendscontentprovider;
+package me.kamili.rachid.legendscontentprovider.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -90,7 +90,7 @@ public class LegendsContentProvider extends ContentProvider {
             default:
                 throw new IllegalArgumentException("Unknown URI: " + uri);
         }
-        // We cn use this as wellUri.parse(EmployeeContract.EMPLOYEE_URI.toString() + "/" + newId);
+        // We cn use this as wellUri.parse(LegendGroupContract.LegendGroup_URI.toString() + "/" + newId);
 
         return ContentUris.withAppendedId(uri, newId);
     }

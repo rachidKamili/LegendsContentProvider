@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.kamili.rachid.legendscontentprovider">
+    package="me.kamili.rachid.otherapp">
 
-    <permission android:name="me.kamili.rachid.legendscontentprovider.READ"/>
+    <uses-permission android:name="me.kamili.rachid.legendscontentprovider.READ"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -18,14 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name=".provider.LegendsContentProvider"
-            android:authorities="me.kamili.rachid.legendscontentprovider"
-            android:enabled="true"
-            android:exported="true"
-            android:grantUriPermissions="true"
-            android:readPermission="me.kamili.rachid.legendscontentprovider.READ" />
     </application>
 
 </manifest>
